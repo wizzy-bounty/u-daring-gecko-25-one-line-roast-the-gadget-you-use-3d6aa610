@@ -7,7 +7,7 @@ Python standard library only, no network, fully deterministic.
 import os
 from pathlib import Path
 
-ROAST = (
+ENTRY_TEXT = (
     "My earbuds case shows 100% while both earbuds are dead, "
     "blinking green like everything is fine: "
     "a power bank that refuses to share."
@@ -17,7 +17,7 @@ ROAST = (
 def main() -> None:
     out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "entry.txt").write_text(ROAST + "\n", encoding="utf-8")
+    (out_dir / "entry.txt").write_text(ENTRY_TEXT + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
